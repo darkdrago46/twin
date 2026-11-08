@@ -80,13 +80,6 @@ with gr.Blocks(
             )
             gr.Markdown(
                 """
-## Soumik Rakshit
-**Software Engineer · Citi**
-
-Building scalable backend systems, one commit at a time.
-
----
-
 ### About me
 Software Engineer at Citi, Chennai, focused on backend engineering,
 distributed systems and building reliable applications.
