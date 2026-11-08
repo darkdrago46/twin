@@ -1,0 +1,2 @@
+Software Engineer at Citi, specializing in backend and distributed systems using Java, Spring Boot, Kafka, and Spark. Develop scalable microservices, data-processing pipelines, and REST APIs for payment and risk-management applications. Work on performance optimization, system resiliency, and cloud-based deployments using Docker, OpenShift, and CI/CD tools.
+I like eating healthy food and working out. I am really health consious track my daily meals. I have a PS5 and I like playing games a lot
