@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soumik Rakshit — Software Engineer</title>
+<meta name="description" content="Backend and distributed systems engineer at Citi. Java, Spring Boot, Apache Spark, Kafka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c10; --surface:#111317; --line:#22252b; --text:#e9e9e1; --muted:#9a9b92; --dim:#2c2f35; --green:#86d58b;
+  --display:"Space Grotesk","Helvetica Neue",Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; --body:"Inter",system-ui,sans-serif;
+  --pad:clamp(20px,3.3vw,84px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px;background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.label.g{color:var(--green)}
+.display{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.92}
+.wrap{padding-inline:var(--pad)}
+section{position:relative}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad);background:rgba(10,12,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:16px;font-family:var(--mono);font-weight:600;letter-spacing:.22em;font-size:clamp(15px,1.6vw,22px)}
+.mark{display:grid;gap:5px;width:24px}
+.mark i{display:block;height:5px;border-radius:3px;background:var(--green)}
+.mark i:nth-child(1){width:24px}.mark i:nth-child(2){width:18px}.mark i:nth-child(3){width:10px}
+.right{display:flex;align-items:center;gap:14px}
+nav{display:flex;gap:8px;padding:6px;border:1px solid var(--line);border-radius:999px;background:#13151a}
+nav a{font-family:var(--mono);font-size:15px;color:#cfcfc6;padding:12px 18px;border-radius:999px;transition:background .2s,color .2s}
+nav a:hover{background:#1d2026;color:#fff}
+.btn{display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-weight:500;font-size:15px;background:var(--green);color:#07120a;padding:18px 24px;border-radius:6px;border:1px solid var(--green);transition:transform .2s,filter .2s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--green)}
+header .btn{padding:16px 22px}
+
+/* hero */
+#hero{min-height:100svh;padding:clamp(120px,16vh,170px) var(--pad) 28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#hero>*:not(canvas){position:relative}
+h1.display{font-size:clamp(46px,12.2vw,230px);margin:clamp(28px,5vh,64px) 0}
+h1 .row{display:flex;justify-content:space-between;gap:.3em}
+.sub{font-family:var(--mono);font-size:clamp(15px,1.5vw,20px);color:#c4c4bb;max-width:30em;line-height:1.55;margin-bottom:28px}
+.hero-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px}
+
+/* metrics */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.metric{padding:56px var(--pad) 52px;border-left:1px solid var(--line)}
+.metric:first-child{border-left:0}
+.metric b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(44px,5.8vw,100px);letter-spacing:-.03em;line-height:1;margin-bottom:22px}
+.metric .label{font-size:12px;letter-spacing:.24em;line-height:1.7}
+
+/* section heads */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:56px}
+.head h2{font-size:clamp(36px,6vw,104px);margin-top:14px}
+.head p{font-family:var(--mono);color:var(--muted);max-width:26em;font-size:16px;line-height:1.65}
+
+/* expertise */
+#expertise{padding:clamp(80px,12vw,170px) var(--pad) 90px}
+.exp{display:grid;grid-template-columns:clamp(90px,13vw,230px) 1fr auto;gap:clamp(12px,3vw,48px);align-items:center;padding:56px 32px;border-top:1px solid var(--line);margin-inline:-32px;transition:background .25s}
+.exp:last-child{border-bottom:1px solid var(--line)}
+.exp .n{font-family:var(--display);font-weight:700;font-size:clamp(64px,9vw,150px);line-height:.8;color:var(--dim);transition:color .25s}
+.exp h3{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.3vw,52px);text-transform:uppercase;letter-spacing:-.02em;line-height:1;margin-bottom:18px}
+.exp p{color:var(--muted);font-size:clamp(16px,1.35vw,20px);max-width:36em}
+.go{width:clamp(46px,4vw,62px);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:20px;transition:all .25s}
+.exp:hover,.exp:focus-visible{background:var(--surface)}
+.exp:hover .n{color:var(--green)}
+.exp:hover .go{background:var(--green);border-color:var(--green);color:#07120a}
+
+/* about */
+#about{padding:clamp(70px,10vw,140px) var(--pad) clamp(90px,12vw,180px);border-top:1px solid var(--line)}
+#about h2{font-size:clamp(40px,8.2vw,150px);margin:clamp(28px,4vw,56px) 0}
+#about h2 span{display:block}
+#about h2 span:nth-child(2){padding-left:11%}
+#about h2 span:nth-child(3){padding-left:22%;color:var(--green)}
+#about p{margin-left:auto;max-width:34em;color:#b3b3aa;font-size:clamp(17px,1.5vw,22px);line-height:1.7}
+
+/* work */
+#work{padding:clamp(70px,10vw,140px) var(--pad);border-top:1px solid var(--line);background:#0c0e12}
+.figs{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,4vw,64px) 24px}
+figure{display:block}
+.ph{position:relative;aspect-ratio:3/2;border:1px solid var(--line);overflow:hidden;background:
+  radial-gradient(120% 90% at 30% 20%,#1b2b2a 0,#0e1417 55%,#0a0c10 100%)}
+.ph::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.5}
+.ph svg{position:absolute;inset:12% 8%;width:84%;height:76%}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:18px}
+figcaption .label{font-size:12px;letter-spacing:.2em}
+.f1{grid-column:1/8}.f2{grid-column:9/13;margin-top:clamp(40px,12vw,220px)}.f3{grid-column:4/11}
+.f2 .ph{aspect-ratio:4/5}
+
+/* projects */
+#projects{padding:clamp(70px,10vw,140px) var(--pad);border-top:1px solid var(--line)}
+.proj{display:grid;grid-template-columns:clamp(70px,10vw,170px) 1fr auto;gap:24px;align-items:center;padding:44px 0;border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj .n{font-family:var(--display);font-weight:700;font-size:clamp(44px,5.5vw,86px);color:var(--dim);line-height:1}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 16px;margin-bottom:14px}
+.proj h3{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.2vw,50px);letter-spacing:-.02em;line-height:1.1}
+.proj .label{text-align:right;font-size:13px}
+a.proj:hover .n{color:var(--green)}
+
+/* twin */
+#twin{padding:clamp(70px,10vw,140px) var(--pad);border-top:1px solid var(--line);background:#0c0e12}
+.twinbox{border:1px solid var(--line);background:var(--surface);min-height:520px;display:grid;place-items:center;text-align:center;padding:40px}
+.twinbox iframe{width:100%;height:640px;border:0;background:var(--bg)}
+.twinbox p{font-family:var(--mono);color:var(--muted);max-width:30em;margin:0 auto 28px}
+
+/* contact */
+#contact{min-height:80svh;padding:clamp(70px,10vw,130px) var(--pad);display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--line);overflow:hidden}
+#contact>*:not(canvas){position:relative}
+#contact h2{font-size:clamp(44px,10.8vw,190px);margin:clamp(24px,4vw,48px) 0}
+#contact h2 span{display:block}
+#contact h2 span:nth-child(2){padding-left:17%}
+#contact h2 em{font-style:normal;color:var(--green)}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:84px var(--pad) 40px;background:var(--bg)}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.fgrid p{font-family:var(--mono);color:var(--muted);font-size:15px;line-height:1.8;max-width:24em;margin-top:34px}
+.fgrid h4{font-family:var(--mono);font-weight:400;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+.fgrid li{list-style:none;margin-bottom:22px;color:#cfcfc6;font-size:17px}
+.fgrid a:hover{color:var(--green)}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:34px;border-top:1px solid var(--line)}
+.legal .label{font-size:13px}
+
+@media(max-width:900px){
+  nav{display:none}
+  .metrics{grid-template-columns:1fr 1fr}
+  .metric:nth-child(3){border-left:0}
+  .metric:nth-child(n+3){border-top:1px solid var(--line)}
+  .exp{grid-template-columns:70px 1fr;margin-inline:0;padding:40px 0}
+  .exp .go{display:none}
+  .figs>*{grid-column:1/-1!important;margin-top:0!important}
+  .proj{grid-template-columns:56px 1fr}
+  .proj .label{grid-column:2;text-align:left}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .fgrid>div:first-child{grid-column:1/-1}
+  h1 .row{flex-wrap:wrap}
+  #about h2 span:nth-child(n){padding-left:0}
+  #contact h2 span:nth-child(2){padding-left:0}
+}
+@media(max-width:520px){header .btn{padding:12px 14px;font-size:13px}.brand{letter-spacing:.14em}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#hero" aria-label="S. Rakshit, home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>S.RAKSHIT</a>
+  <div class="right">
+    <nav aria-label="Primary"><a href="#expertise">Expertise</a><a href="#about">About</a><a href="#work">Work</a></nav>
+    <a class="btn" href="#contact">Get in Touch</a>
+  </div>
+</header>
+
+<main>
+<section id="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="label">Soumik Rakshit / Software Engineer</div>
+  <div>
+    <h1 class="display">
+      <span class="row"><span>Backend</span><span>&amp;</span></span>
+      <span class="row"><span>Distributed</span></span>
+      <span class="row"><span>Systems</span><span>Engineer</span></span>
+      <span class="row"><span>At Scale</span></span>
+    </h1>
+    <p class="sub">3+ years building enterprise Java microservices, Spark-based data pipelines, and resilient payment-processing systems at Citi.</p>
+    <a class="btn" href="#work">View My Work <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="hero-foot label"><span>Chennai, IN</span><span>Scroll to explore</span><span>Java · Spark · Kafka</span></div>
+</section>
+
+<div class="metrics" aria-label="Highlights">
+  <div class="metric"><b>3+</b><span class="label">Years building enterprise systems</span></div>
+  <div class="metric"><b>96%</b><span class="label">Build time reduction at Citi</span></div>
+  <div class="metric"><b>1,000x</b><span class="label">Latency improvement on Spark migration</span></div>
+  <div class="metric"><b>9.37</b><span class="label">CGPA — Anna University</span></div>
+</div>
+
+<section id="expertise">
+  <div class="head">
+    <div><div class="label g">Expertise</div><h2 class="display">What I build &amp; operate</h2></div>
+    <p>From system design to production support — measure honestly, attribute precisely, decide faster.</p>
+  </div>
+  <a class="exp" href="#contact"><span class="n">01</span><div><h3>Distributed Systems</h3><p>Designing resilient backend services for transaction replay, auditing, lineage tracking, and recovery workflows across large-scale payment-processing systems.</p></div><span class="go" aria-hidden="true">↗</span></a>
+  <a class="exp" href="#contact"><span class="n">02</span><div><h3>Java Microservices</h3><p>Building Spring Boot microservices and reusable Java persistence components that standardize data-access patterns across multiple backend teams.</p></div><span class="go" aria-hidden="true">↗</span></a>
+  <a class="exp" href="#contact"><span class="n">03</span><div><h3>Data Processing</h3><p>Migrating enterprise ETL and streaming workloads from Ab Initio to Apache Spark, with a 1,000x latency improvement in production.</p></div><span class="go" aria-hidden="true">↗</span></a>
+</section>
+
+<section id="about">
+  <div class="label g">About me</div>
+  <h2 class="display"><span>Engineering should</span><span>never be a</span><span>guessing game.</span></h2>
+  <p>I'm a Software Engineer with 3+ years building and supporting enterprise applications, Java-based microservices, and distributed data-processing systems at Citi. I own backend features end-to-end — from requirements analysis and system design through implementation, testing, production deployment, monitoring, and SLA-driven support. I care about honest measurement, clean data-access patterns, and releases that ship faster every quarter.</p>
+</section>
+
+<section id="work">
+  <div class="head"><h2 class="display">Selected work</h2><span class="label">Projects</span></div>
+  <div class="figs">
+    <figure class="f1">
+      <div class="ph"><!-- To use a photo: <img src="assets/fig1.jpg" alt="..."> -->
+        <svg viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#86d58b" stroke-width="2" points="0,150 30,120 55,135 90,80 120,110 150,60 190,100 220,50 260,90 300,40 340,70 400,30"/><g fill="#e0846f" opacity=".85"><rect x="20" y="170" width="10" height="30"/><rect x="60" y="160" width="10" height="40"/><rect x="100" y="175" width="10" height="25"/><rect x="140" y="150" width="10" height="50"/><rect x="180" y="165" width="10" height="35"/><rect x="220" y="140" width="10" height="60"/><rect x="260" y="160" width="10" height="40"/><rect x="300" y="145" width="10" height="55"/></g></svg></div>
+      <figcaption><span class="label">Fig. 01 — Payment analytics dashboard</span><span class="label">Angular · Spring Boot</span></figcaption>
+    </figure>
+    <figure class="f2">
+      <div class="ph"><svg viewBox="0 0 200 250" aria-hidden="true"><g fill="#86d58b" opacity=".8"><rect x="30" y="60" width="140" height="10"/><rect x="30" y="90" width="100" height="10"/><rect x="30" y="120" width="120" height="10"/><rect x="30" y="150" width="70" height="10"/></g></svg></div>
+      <figcaption><span class="label">Fig. 02 — Expenso expense tracker</span><span class="label">React · Supabase</span></figcaption>
+    </figure>
+    <figure class="f3">
+      <div class="ph"><svg viewBox="0 0 400 200" aria-hidden="true"><g stroke="#86d58b" stroke-width="1.5" fill="none" opacity=".8"><path d="M60 100H160M160 100L240 50M160 100L240 150M240 50H340M240 150H340"/></g><g fill="#0a0c10" stroke="#86d58b" stroke-width="2"><circle cx="60" cy="100" r="9"/><circle cx="160" cy="100" r="9"/><circle cx="240" cy="50" r="9"/><circle cx="240" cy="150" r="9"/><circle cx="340" cy="50" r="9"/><circle cx="340" cy="150" r="9"/></g></svg></div>
+      <figcaption><span class="label">Fig. 03 — Spark resiliency connector</span><span class="label">Java · Apache Spark</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="head"><h2 class="display">Projects</h2><span class="label">From the lab</span></div>
+  <a class="proj" href="#contact"><span class="n">01</span><div><span class="tag">Full-stack</span><h3>Payment Analytics Platform &amp; Reporting Automation</h3></div><span class="label">Java · Spring Boot · Angular · SQL</span></a>
+  <a class="proj" href="https://github.com/darkdrago46"><span class="n">02</span><div><span class="tag">Full-stack · AI</span><h3>Expenso — AI-Powered Personal Expense Tracker</h3></div><span class="label">Java · Spring Boot · React · Supabase</span></a>
+  <a class="proj" href="#contact"><span class="n">03</span><div><span class="tag">Distributed systems</span><h3>Spark Resiliency Connector for payment replay &amp; recovery</h3></div><span class="label">Java · Spring Boot · Apache Spark</span></a>
+</section>
+
+<section id="twin">
+  <div class="head"><div><div class="label g">Digital twin</div><h2 class="display">Ask my twin</h2></div><p>An AI version of me trained on my résumé and projects. Ask about my background, skills, or work.</p></div>
+  <div class="twinbox" id="twinbox">
+    <!-- Set TWIN_URL below to your deployed Gradio app to embed it. -->
+    <div><p>The chat opens here once the Digital Twin is deployed.</p><a class="btn ghost" href="#contact">Get in Touch</a></div>
+  </div>
+</section>
+
+<section id="contact">
+  <canvas id="net2" aria-hidden="true"></canvas>
+  <div class="label">Let's build something</div>
+  <h2 class="display"><span>See what your</span><span>systems can <em>become.</em></span></h2>
+  <div class="ctas"><a class="btn" href="mailto:rakshitsoumik0429@gmail.com">Get in Touch <span aria-hidden="true">↗</span></a><a class="btn ghost" href="mailto:rakshitsoumik0429@gmail.com">rakshitsoumik0429@gmail.com</a></div>
+</section>
+</main>
+
+<footer>
+  <div class="fgrid">
+    <div><a class="brand" href="#hero"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>S.RAKSHIT</a><p>Software Engineer building backend systems and distributed data pipelines that would rather know than guess.</p></div>
+    <div><h4>Skills</h4><ul><li>Java</li><li>Spring Boot</li><li>Apache Spark</li><li>Kafka</li></ul></div>
+    <div><h4>Experience</h4><ul><li>Citi — App Developer</li><li>Citi — Intern</li><li>Education</li><li><a href="#contact">Contact</a></li></ul></div>
+    <div><h4>Links</h4><ul><li><a href="#">LinkedIn</a></li><li><a href="https://github.com/darkdrago46">GitHub</a></li><li><a href="mailto:rakshitsoumik0429@gmail.com">Email</a></li><li><a href="#">Resume</a></li></ul></div>
+  </div>
+  <div class="legal label"><span>© 2026 Soumik Rakshit</span><span>Measure honestly. Decide faster.</span></div>
+</footer>
+
+<script>
+const TWIN_URL = ""; // e.g. "https://your-twin.hf.space"
+if (TWIN_URL) {
+  const f = document.createElement("iframe");
+  f.src = TWIN_URL; f.title = "Soumik's Digital Twin"; f.loading = "lazy";
+  document.getElementById("twinbox").replaceChildren(f);
+}
+
+// Constellation background
+function constellation(id){
+  const c = document.getElementById(id), x = c.getContext("2d");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w, h, pts = [], dpr = Math.min(devicePixelRatio || 1, 2), run = true;
+  function size(){
+    const r = c.parentElement.getBoundingClientRect();
+    w = r.width; h = r.height; c.width = w*dpr; c.height = h*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    const n = Math.round(Math.min(90, w*h/16000));
+    pts = Array.from({length:n}, () => ({x:Math.random()*w, y:Math.random()*h, vx:(Math.random()-.5)*.18, vy:(Math.random()-.5)*.18, r:Math.random()*1.2+.6, hot:Math.random()<.06}));
+  }
+  function draw(){
+    x.clearRect(0,0,w,h);
+    for (const p of pts){
+      if(!still){p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1;}
+    }
+    for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++){
+      const a=pts[i], b=pts[j], d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<150){x.strokeStyle="rgba(233,233,225,"+(.13*(1-d/150))+")"; x.lineWidth=.7; x.beginPath(); x.moveTo(a.x,a.y); x.lineTo(b.x,b.y); x.stroke();}
+    }
+    for (const p of pts){x.fillStyle = p.hot ? "rgba(235,110,80,.9)" : "rgba(233,233,225,.5)"; x.beginPath(); x.arc(p.x,p.y,p.r,0,6.283); x.fill();}
+    if(run && !still) requestAnimationFrame(draw);
+  }
+  new IntersectionObserver(e => { run = e[0].isIntersecting; if(run) draw(); }).observe(c);
+  addEventListener("resize", () => { size(); draw(); });
+  size(); draw();
+}
+constellation("net"); constellation("net2");
+</script>
+</body>
+</html>
